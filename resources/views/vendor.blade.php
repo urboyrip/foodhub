@@ -9,7 +9,7 @@
               @else
               <img class="mt-4" src="/image/{{ $vendor->slug }}/flyer.png" style="width: 75vw" alt="Flyer">
               @endif
-    <p class="mt-4">{{ $vendor['description'] }}</p>
+    <p class="mt-4">{{ strip_tags($vendor['description']) }}</p>
     <h4 class="mt-2">Rating</h4>
     <h5>{{ $vendor['star'] }} Star</h5>
     <h2 class="mt-3"> Menu</h2>

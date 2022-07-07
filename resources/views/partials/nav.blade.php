@@ -28,7 +28,7 @@
       @if(Auth::guard('user')->check())
         <li  class="nav-item dropdown list-unstyled">
           <a class="nav-link dropdown-toggle " href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Welcome,{{Auth::guard('user')->user()->name}}
+            Welcome, {{Auth::guard('user')->user()->name}}
           </a>
           @if(Auth::guard('user')->user()->admin==true)
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">

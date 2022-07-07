@@ -101,7 +101,27 @@ class DashboardMenuController extends Controller
      */
     public function update(Request $request, Menu $menu)
     {
-        //
+        $rules = [
+            'name' => 'required',
+            'description' => 'required',
+            'price' => 'required',
+            'picture'=> 'image|file',
+            'description' => 'required',
+            'vendors_id' => 'required'];
+
+        $validatedData = $request->validate($rules);
+
+        if($request->file('picture')){
+            if($request->oldImage){
+                Storage::delete($request->oldImage);
+            }
+            $validatedData['picture']=$request->file('picture')->store('menu');
+        }
+
+        Menu::where('id',$menu->id)
+                ->update($validatedData);
+
+        return redirect('dashboard/menu')->with('success','Vendor has been updated!');
     }
 
     /**

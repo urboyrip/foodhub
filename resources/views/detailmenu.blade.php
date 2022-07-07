@@ -4,8 +4,12 @@
     <div class="card mt-3 container d-flex justify-content-center" style="width: 60vw">
         <div class="card-body ">
           <h3 class="card-title">{{ $menus['name'] }}</h3>
-              <img class="align-center" style="border-radius: 20px" src="/image/{{ $vendor['slug'] }}/{{ $menus['picture'] }}" style="width: 50vw" alt="Flyer">
-          <p class="mt-4">{{ $menus['description'] }}</p>
+          @if($menus->picture)
+          <img class="card-img-top" src="{{ asset('storage/'.$menus->picture) }}"  alt="Flyer">
+          @else
+          <img class="card-img-top" src="/image/{{ $vendor->slug }}/{{ $menus->picture }}" alt="{{ $menus->name }}" >
+        @endif
+          <p class="mt-4">{{ strip_tags($menus['description']) }}</p>
           <h4 class="mt-1">Rp. {{ $menus['price'] }},-</h4>
           @if ($status=='edit')
           <form action="/transaksi/{{ $menus->id }}" method="POST">

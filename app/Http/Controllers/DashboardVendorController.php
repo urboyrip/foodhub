@@ -2,11 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Vendors;
 use App\Models\Menu;
-use Cviebrock\EloquentSluggable\Services\SlugService;
+use App\Models\Vendors;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
+use Cviebrock\EloquentSluggable\Tests\Models\Post;
+use Cviebrock\EloquentSluggable\Services\SlugService;
 
 class DashboardVendorController extends Controller
 {
@@ -124,6 +127,9 @@ class DashboardVendorController extends Controller
         Vendors::where('id',$vendor->id)
                 ->update($validatedData);
 
+        if(Auth::guard('vendors')->check()){
+            return redirect('dashboard')->with('success','Vendor has been updated!');
+        }
         return redirect('dashboard/vendors')->with('success','Vendor has been updated!');
     }
 

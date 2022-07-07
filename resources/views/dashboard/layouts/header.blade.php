@@ -4,8 +4,11 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="navbar-nav">
-      <div class="nav-item text-nowrap">
-        <a class="nav-link px-3" href="/">Log Out</a>
+      <div class="nav-item text-nowrap d-flex">
+        @if(Auth::guard('vendors')->check())
+        <a class="nav-link px-3" href="/dashboard/vendors/{{ Auth::guard('vendors')->user()->slug }}/edit">Edit Profile</a>
+        @endif
+        <a class="nav-link px-3" href="/">Go Home</a>
       </div>
     </div>
   </header>

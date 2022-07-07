@@ -2,15 +2,16 @@
 
 @section('container')
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-    <h1 class="h2">Menu - add</h1>   
+    <h1 class="h2">Menu - Edit</h1>   
 </div>
 <div class="col-lg-8">
-  <form method="post" action="/dashboard/menu" enctype="multipart/form-data">
+  <form method="post" action="/dashboard/menu/{{ $menu->id }}" enctype="multipart/form-data">
     @csrf
+    @method('put')
       <div class="mb-3">
         
         @if(Auth::guard('vendors')->check())
-        <input name="vendor" type="hidden" value="{{ Auth::guard('vendors')->user()->name }}" class="form-control"  >
+        <input name="vendors_id" type="hidden" value="{{ Auth::guard('vendors')->user()->id }}" class="form-control"  >
         
         @elseif(Auth::guard('user')->check() )
         <label class="form-label">Vendor</label>
@@ -50,7 +51,7 @@
           <img class="img-preview img-fluid mb-3 col-sm-5 d-block" src="" alt="">
           @endif
           
-          <input class="form-control @error('picture') is-invalid @enderror" type="file" id="picture" name="picture" onchange="previewImage()">
+          <input class="form-control @error('picture') is-invalid @enderror" type="file" id="picture" name="picture" value="{{ old('description',$menu->picture) }}" onchange="previewImage()">
           @error('picture')
         <div class="invalid-feedback">
           {{ $message }}
