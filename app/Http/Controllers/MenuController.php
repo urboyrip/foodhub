@@ -28,6 +28,7 @@ class MenuController extends Controller
             'total' => 0,
             'status' => '0'
         ]);
+        return redirect('/menu');
     }
     public function transaksiAdd(Request $request, $vendor,$menus){
         $pesanan = Pesanan::where('id_customer',Auth::guard('user')->user()->id)->where('status',0)->first()->id;

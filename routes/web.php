@@ -11,6 +11,8 @@ use App\Http\Controllers\DashboardMenuController;
 use App\Http\Controllers\DashboardVendorController;
 use App\Http\Controllers\MenuController;
 use App\Models\Meja;
+use App\Models\Pesanan;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,16 +38,17 @@ Route::get('/about',function(){
 });
 
 Route::get('/order',function(){
-    return view('order',[
-        "title" => "Order",
-        "mejas" => Meja::where('status',0)->get()
-    ]);
+    if (Pesanan::where('id_customer',Auth::guard('user')->user()->id)->where('status',0)->first() == null) {
+        return view('order',[
+            "title" => "Order",
+            "mejas" => Meja::where('status',0)->get()
+        ]);
+        return redirect('/menu');
+    }
+    return redirect('/menu');
+    
 });
-Route::post('/order/create',function(){
-    return view('order',[
-        "title" => "Order",
-    ]);
-});
+Route::post('/order/create',[MenuController::class,'order']);
 
 Route::get('/rest',function(){
     return view('rest',[
