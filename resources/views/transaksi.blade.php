@@ -11,7 +11,7 @@
           <th scope="col">Quantity</th>
           <th scope="col">Price</th>
           <th scope="col">Total</th>
-          <th scope="col"><a href="/dashboard/menu/create" class="btn btn-info btn-sm">Add</a></th>
+          <th scope="col"><a href="/menu" class="btn btn-info btn-sm">Add</a></th>
           
         </tr>
       </thead>
@@ -34,7 +34,7 @@
           @endforeach --}}
 
           {{-- Ini yang dipake laporan ya bun --}}
-          <tr>
+          {{-- <tr>
             <td>1</td>
             <td>Burger Enak</td>
             <td>Burgernya</td>
@@ -45,7 +45,28 @@
                 <a href="" class="btn btn-warning btn-sm">Edit</a>
                 <a href="" class="btn btn-danger btn-sm">Delete</a>
             </td>
+        </tr> --}}
+        <tr>
+          @foreach ($transaksi as $item )
+          <tr>
+            <td>{{ $item->id }}</td>
+            <td>{{ $item->menus->vendor->name }}</td>
+            <td>{{ $item->menus->name }}</td>
+            <td>{{ $item->jumlah }}</td>
+            <td>{{ $item->menus->price }}</td>
+            <td>{{ $item->subtotal }}</td>
+            <td class="d-flex">
+                <a href="/transaksi/{{ $item->id }}/edit" class="btn btn-warning btn-sm">Edit</a>
+                <form action="/transaksi/{{ $item->id }}" method="POST">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" class="btn btn-danger btn-sm ms-3">Delete</button>
+                </form>
+               
+            </td>
         </tr>
+          @endforeach
+      </tr>
           
           
       </tbody>

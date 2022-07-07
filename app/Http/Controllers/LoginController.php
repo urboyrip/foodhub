@@ -43,6 +43,15 @@ class LoginController extends Controller
                 return redirect()->back();
             }
         }
+        // if($request->role == "user"){
+        //     if (Auth::guard('user')->attempt(['email' => $request->email, 'password' => $request->password])) {
+        //         $request->session()->regenerate();
+        //         return redirect('/menu');
+        //     } else {
+        //         return redirect()->back();
+        //     }
+        // }
+
 
         return back()->with('error','Login Failed');
     }

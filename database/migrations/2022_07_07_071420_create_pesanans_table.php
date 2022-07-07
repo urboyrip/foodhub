@@ -17,7 +17,6 @@ return new class extends Migration
             $table->id();
             $table->foreignId('id_customer');
             $table->foreignId('no_meja');
-            $table->foreignId('detail');
             $table->integer('total');
             $table->boolean('status');
             $table->timestamps();

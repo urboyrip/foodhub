@@ -52,6 +52,7 @@ Route::get('/menu',[VendorController::class,'index']);
 //Halaman single vendor
 Route::get('menu/{vendor:slug}',[VendorController::class,'show']);
 Route::get('menu/{vendor:slug}/{menu:id}',[MenuController::class,'showmenu']);
+Route::post('/menu/{vendor:slug}/{menu:id}/add',[MenuController::class,'transaksiAdd'])->middleware('vendor');
 
 
 Route::get('/dashboard',function(){
@@ -75,3 +76,4 @@ Route::post('/registervend',[RegisterController::class,'storevend']);
 
 
 Route::resource('/transaksi',TransaksiController::class);
+

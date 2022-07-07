@@ -12,9 +12,13 @@ class Transaksi extends Model
     public function vendors(){
         return $this->belongsTo(User::class);
     }
+    public function menus(){
+        return $this->belongsTo(Menu::class,'menu');
+    }
 
     public function getRouteKeyName()
     {
         return 'id';
     }
+    
 }

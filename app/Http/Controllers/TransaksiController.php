@@ -5,6 +5,12 @@ namespace App\Http\Controllers;
 use App\Models\transaksi;
 use App\Http\Requests\StoretransaksiRequest;
 use App\Http\Requests\UpdatetransaksiRequest;
+use App\Models\Meja;
+use App\Models\Menu;
+use App\Models\Pesanan;
+use App\Models\Vendors;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class TransaksiController extends Controller
 {
@@ -15,8 +21,10 @@ class TransaksiController extends Controller
      */
     public function index()
     {
+        $pesanan = Pesanan::where('id_customer',Auth::guard('user')->user()->id)->where('status',0)->first()->id;
         return view('transaksi',[
-            'title' => 'transaksi'
+            'title' => 'transaksi',
+            'transaksi' => transaksi::where('pesanan',$pesanan)->get(),
         ]);
     }
 
@@ -60,7 +68,13 @@ class TransaksiController extends Controller
      */
     public function edit(transaksi $transaksi)
     {
-        //
+        return view('detailmenu',[
+            "title" => "detail",
+            "menus" => Menu::find($transaksi->menu),
+            "vendor" => Vendors::find($transaksi->menus->vendor->id),
+            "transaksi"=>$transaksi,
+            "status"=>'edit'
+        ]);
     }
 
     /**
@@ -70,9 +84,13 @@ class TransaksiController extends Controller
      * @param  \App\Models\transaksi  $transaksi
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdatetransaksiRequest $request, transaksi $transaksi)
+    public function update(Request $request, transaksi $transaksi)
     {
-        //
+        transaksi::where('id',$transaksi->id)->update([
+            'jumlah' => $request->jumlah,
+            'subtotal' => $request->jumlah * $transaksi->menus->price,
+        ]);
+        return redirect('/transaksi')->with('success','transaksi terupdate');
     }
 
     /**
@@ -83,6 +101,9 @@ class TransaksiController extends Controller
      */
     public function destroy(transaksi $transaksi)
     {
-        //
+        transaksi::destroy($transaksi->id);
+        
+        return redirect('/transaksi')->with('success','transaksi terhapus');
     }
+    
 }
