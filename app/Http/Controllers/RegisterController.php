@@ -49,6 +49,8 @@ class RegisterController extends Controller
             're-password' => 'required|required_with:password|same:password',
             'founder'=>'required'
         ]);
+
+        // $validatedData['slug'] = str_slug($validatedData['name']);
         
         // $validatedData['password'] = bcrypt($validatedData['password']);
         $validatedData['password'] = Hash::make($validatedData['password']);
