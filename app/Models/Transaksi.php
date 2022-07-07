@@ -16,6 +16,10 @@ class Transaksi extends Model
         return $this->belongsTo(Menu::class,'menu');
     }
 
+    public function pesanan(){
+        return $this->belongsTo(Pesanan::class,'pesanan');
+    }
+
     public function getRouteKeyName()
     {
         return 'id';
