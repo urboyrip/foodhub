@@ -6,6 +6,7 @@
           <h3 class="card-title">{{ $menus['name'] }}</h3>
               <img class="align-center" style="border-radius: 20px" src="/image/{{ $vendor['slug'] }}/{{ $menus['picture'] }}" style="width: 50vw" alt="Flyer">
           <p class="mt-4">{{ $menus['description'] }}</p>
+          <h4 class="mt-1">Rp. {{ $menus['price'] }},-</h4>
           @if ($status=='edit')
           <form action="/transaksi/{{ $menus->id }}" method="POST">
             @csrf
