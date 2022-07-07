@@ -48,7 +48,8 @@ Route::get('/rest',function(){
 
 Route::get('/pokokmari',function(){
     return view('detailmenu',[
-        "title" => "detail"
+        "title" => "detail",
+        "status"=> 'add'
     ]);
 });
 

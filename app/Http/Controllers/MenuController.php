@@ -17,7 +17,8 @@ class MenuController extends Controller
         return view('detailmenu',[
             "title" => "detail",
             "menus" => Menu::find($menus),
-            "vendor" => Vendors::find(1)
+            "vendor" => Vendors::find(1),
+            "status" => "add"
         ]);
     }
     public function transaksiAdd(Request $request, $vendor,$menus){
