@@ -20,6 +20,14 @@ class MenuController extends Controller
             "vendor" => Vendors::find(1)
         ]);
     }
+    public function order(Request $request){
+        Pesanan::create([
+            'id_customer' => Auth::guard('user')->user()->id,
+            'no_meja' => $request->no_meja,
+            'total' => 0,
+            'status' => '0'
+        ]);
+    }
     public function transaksiAdd(Request $request, $vendor,$menus){
         $pesanan = Pesanan::where('id_customer',Auth::guard('user')->user()->id)->where('status',0)->first()->id;
         if ($pesanan == null) {

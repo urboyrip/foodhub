@@ -10,6 +10,7 @@ use App\Http\Controllers\TransaksiController;
 use App\Http\Controllers\DashboardMenuController;
 use App\Http\Controllers\DashboardVendorController;
 use App\Http\Controllers\MenuController;
+use App\Models\Meja;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,7 +37,13 @@ Route::get('/about',function(){
 
 Route::get('/order',function(){
     return view('order',[
-        "title" => "Order"
+        "title" => "Order",
+        "mejas" => Meja::where('status',0)->get()
+    ]);
+});
+Route::post('/order/create',function(){
+    return view('order',[
+        "title" => "Order",
     ]);
 });
 
