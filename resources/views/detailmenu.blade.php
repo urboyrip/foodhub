@@ -1,10 +1,10 @@
 @extends('layouts.main')
 @section('section')
 <div class="container">
-    <div class="card mt-3" style="width: 60vw">
-        <div class="card-body">
+    <div class="card mt-3 container d-flex justify-content-center" style="width: 60vw">
+        <div class="card-body ">
           <h3 class="card-title">{{ $menus['name'] }}</h3>
-              <img class=" align-center" src="/image/{{ $vendor['slug'] }}/{{ $menus['picture'] }}" style="width: 50vw" alt="Flyer">
+              <img class="align-center" style="border-radius: 20px" src="/image/{{ $vendor['slug'] }}/{{ $menus['picture'] }}" style="width: 50vw" alt="Flyer">
           <p class="mt-4">{{ $menus['description'] }}</p>
 
           <form action="action">

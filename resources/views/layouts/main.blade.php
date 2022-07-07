@@ -24,6 +24,9 @@
     {{-- My Style --}}
     <link rel="stylesheet" href="css/style.css">
 
+    {{-- Favicon --}}
+    <link href="image/favicon.ico" rel="icon">
+
     {{-- JQuery --}}
     {{-- <script src="https://code.jquery.com/jquery-3.5.1.js"></script> --}}
 

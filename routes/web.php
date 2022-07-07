@@ -28,6 +28,12 @@ Route::get('/', function () {
     ]);
 });
 
+Route::get('/about',function(){
+    return view('about',[
+        "title" => "About"
+    ]);
+});
+
 Route::get('/order',function(){
     return view('order',[
         "title" => "Order"
