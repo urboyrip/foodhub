@@ -23,7 +23,7 @@ class MenuSeeder extends Seeder
                 'name' => 'Beef Burger',
                 'description' => 'ini beef burger enak banget',
                 'price' => 20000,
-                'picture'=> 'BeefBurger.png',
+                'picture'=> 'menu/BeefBurger.png',
                 'rating'=> 5
             ],
             [
@@ -31,7 +31,7 @@ class MenuSeeder extends Seeder
                 'name' => 'Cheese Burger',
                 'description' => 'ini keju burger enak banget',
                 'price' => 15000,
-                'picture'=> 'CheeseBurger.png',
+                'picture'=> 'menu/CheeseBurger.png',
                 'rating'=> 3
             ],
             [
@@ -39,7 +39,7 @@ class MenuSeeder extends Seeder
                 'name' => 'Nasi Goreng',
                 'description' => 'Nasi Goreng enak banget bodo',
                 'price' => 23000,
-                'picture'=> 'NasiGoreng.png',
+                'picture'=> 'menu/NasiGoreng.png',
                 'rating'=> 4
             ],
             [
@@ -47,7 +47,7 @@ class MenuSeeder extends Seeder
                 'name' => 'Mie Goreng',
                 'description' => 'Enak kok bismillah',
                 'price' => 22000,
-                'picture'=> 'MieGoreng.png',
+                'picture'=> 'menu/MieGoreng.png',
                 'rating'=> 3
             ],
             [
@@ -55,7 +55,7 @@ class MenuSeeder extends Seeder
                 'name' => 'Soto Seger',
                 'description' => 'Soto Suegerr poll',
                 'price' => 10000,
-                'picture'=> 'SotoSeger.png',
+                'picture'=> 'menu/SotoSeger.png',
                 'rating'=> 5
             ],
             [
@@ -63,7 +63,7 @@ class MenuSeeder extends Seeder
                 'name' => 'Soto Ayam',
                 'description' => 'Soto enak ayam juga enak',
                 'price' => 12000,
-                'picture'=> 'SotoAyam.png',
+                'picture'=> 'menu/SotoAyam.png',
                 'rating'=> 5
             ],
             [
@@ -71,7 +71,7 @@ class MenuSeeder extends Seeder
                 'name' => 'Soto Daging',
                 'description' => 'Soto enak Daging juga enak',
                 'price' => 15000,
-                'picture'=> 'SotoDaging.png',
+                'picture'=> 'menu/SotoDaging.png',
                 'rating'=> 4
             ],
             [
@@ -79,7 +79,7 @@ class MenuSeeder extends Seeder
                 'name' => 'Rawon Setan',
                 'description' => 'Rawon enak setan juga enak',
                 'price' => 18000,
-                'picture'=> 'RawonSetan.png',
+                'picture'=> 'menu/RawonSetan.png',
                 'rating'=> 4
             ]
         ]);
