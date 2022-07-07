@@ -12,12 +12,15 @@
         <li class="nav-item">
           <a class="nav-link  {{ ($title==="About")?'active' : '' }}" href="\about">About </a>
         </li>
+        @if(Auth::guard('user')->check())
         <li class="nav-item ">
           <a class="nav-link {{ ($title==="Order")?'active' : '' }}" href="\order">Order </a>
         </li>
         <li class="nav-item">
           <a class="nav-link {{ ($title==="Menu")?'active' : '' }}" href="\menu">Menu</a>
         </li>
+        @endif
+        
         {{-- <li class="nav-item disabled">
             <a class="nav-link disabled" href="#">Payment</a>
         </li> --}}

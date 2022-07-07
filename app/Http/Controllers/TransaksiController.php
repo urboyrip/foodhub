@@ -21,10 +21,14 @@ class TransaksiController extends Controller
      */
     public function index()
     {
-        $pesanan = Pesanan::where('id_customer',Auth::guard('user')->user()->id)->where('status',0)->first()->id;
+        $pesanan = Pesanan::where('id_customer',Auth::guard('user')->user()->id)->where('status',0)->first();
+        if ($pesanan == null) {
+            return redirect('/order');
+        }
         return view('transaksi',[
             'title' => 'transaksi',
-            'transaksi' => transaksi::where('pesanan',$pesanan)->get(),
+            'transaksi' => transaksi::where('pesanan',$pesanan->id)->get(),
+            'pesanan'=>$pesanan
         ]);
     }
 
@@ -104,6 +108,18 @@ class TransaksiController extends Controller
         transaksi::destroy($transaksi->id);
         
         return redirect('/transaksi')->with('success','transaksi terhapus');
+    }
+    public function checkout(Request $request,$id)
+    {
+        Pesanan::where('id',$id)->update([
+            'status' => 1,
+            'total'=>$request->total
+        ]);
+        Meja::where('id',$request->no_meja)->update([
+            'status' => '0'
+        ]);
+        
+        return redirect('/order')->with('success','transaksi terhapus');
     }
     
 }

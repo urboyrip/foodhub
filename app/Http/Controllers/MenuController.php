@@ -28,7 +28,7 @@ class MenuController extends Controller
             'total' => 0,
             'status' => '0'
         ]);
-        Meja::find($request->no_meja)->update([
+        Meja::where('id',$request->no_meja)->update([
             'status' => '1'
         ]);
         return redirect('/menu');
