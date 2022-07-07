@@ -28,7 +28,7 @@ class LoginController extends Controller
                 if(Auth::guard('user')->user()->admin == true){
                     return redirect('/dashboard');
                 }
-                return redirect('/');
+                return redirect('/order');
             } else {
                 return redirect()->back()->with('error','Login Gagal');
             }

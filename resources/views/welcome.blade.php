@@ -2,14 +2,19 @@
 @section('section')
   <div class="welcome">
     <div class="container-fluid text-center">
-      <h1 class="mt-3">Enjoy The Best Food In Your Area!</h1>
-      @if(Auth::check())
-      <p>{{ Auth::guard('user')->user()->admin }}</p>
-      @endif
-      <h3 >Hello guest, what do you want to eat?</h3>
-        <form class="d-inline-flex mt-3">
-          <button class="btn btn-outline-success" type="submit">Get Started</button>
-        </form>
+      <div class="page-header mb-0">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h1>Enjoy The Best Food In Your Area!</h1>
+                    <h3>Hello fellas, what do you want to eat?</h3>
+                </div>
+                <div class="col-12">
+                  <a class="btn btn-primary" href="/login" role="button">GetStarted</a>
+                </div>
+            </div>
+        </div>
+    </div>
 
         
 
