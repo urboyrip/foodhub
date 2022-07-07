@@ -9,6 +9,7 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\TransaksiController;
 use App\Http\Controllers\DashboardMenuController;
 use App\Http\Controllers\DashboardVendorController;
+use App\Http\Controllers\DashboardOrderController;
 use App\Http\Controllers\MenuController;
 use App\Models\Meja;
 use App\Models\Pesanan;
@@ -70,8 +71,9 @@ Route::get('/dashboard',function(){
     return view('dashboard.index');
 })->middleware('user');
 
-Route::resource('/dashboard/menu',DashboardMenuController::class)->middleware('user');
+Route::resource('/dashboard/menu',DashboardMenuController::class)->middleware('vendor');
 Route::resource('/dashboard/vendors',DashboardVendorController::class)->middleware('user');
+Route::resource('/dashboard/orders',DashboardOrderController::class)->middleware('vendor');
 Route::get('dashboard/vendors/checkSlug',[DashboardVendorController::class,'checkSlug'])->middleware('user');
 
 Route::get('/login',[LoginController::class,'index'])->name('login');

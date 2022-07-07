@@ -14,6 +14,13 @@
             Vendors
           </a>
         </li>
+        @else
+        <li class="nav-item">
+          <a class="nav-link {{ Request::is('dashboard/orders*') ? 'active': '' }}" href="/dashboard/orders">
+            <span data-feather="file"></span>
+            Orders
+          </a>
+        </li>
         @endif
         <li class="nav-item ">
           <a class="nav-link {{ Request::is('dashboard/menu*') ? 'active': '' }}" href="/dashboard/menu">
