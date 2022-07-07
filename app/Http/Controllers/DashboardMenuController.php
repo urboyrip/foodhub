@@ -50,8 +50,8 @@ class DashboardMenuController extends Controller
             'vendors_id' => 'required'
         ]);
             
-        if($request->file('image')){
-            $validatedData['image'] = $request->file('image')->store('menu');
+        if($request->file('picture')){
+            $validatedData['picture'] = $request->file('picture')->store('menu');
         }
 
         // $validatedData['id'] = auth()->user()->id;
