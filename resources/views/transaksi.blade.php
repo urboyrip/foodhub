@@ -3,7 +3,7 @@
 <div class="table-responsive col-lg-8">
     <table class="table table-striped table-sm">
       <thead>
-        <h2>My Carts</h2>
+        <h2>My Carts / No Meja {{ $pesanan->no_meja }}</h2> 
         <tr>
           <th scope="col">Id</th>
           <th scope="col">Vendor</th>
@@ -71,9 +71,30 @@
           
       </tbody>
     </table>
+    <h3>total</h3>
+    @php
+        $total = 0;
+        foreach ($transaksi as $item) {
+            $total += $item->subtotal;
+        }
+    @endphp
+    <h3 id="total">{{ $total }}</h3>
+    <form action="/transaksi/checkout/{{ $pesanan->id }}" method="POST">
+      @csrf
+      @method('put')
+        <input type="hidden" value="" id="inputtotal" name="total">
+        <input type="hidden" value="{{ $pesanan->no_meja }}" name="no_meja">
+        <button type="submit" class="btn btn-primary">Checkout</button>
+    </form>
   </div>
 
+<script>
+  let total= document.getElementById("total");
+  let totalInput= document.getElementById("inputtotal");
+  totalInput.value = total.innerHTML;
+</script>
 @endsection
+
 
 
 

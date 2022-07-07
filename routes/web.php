@@ -93,4 +93,5 @@ Route::post('/registervend',[RegisterController::class,'storevend']);
 
 
 Route::resource('/transaksi',TransaksiController::class);
+Route::put('/transaksi/checkout/{id}',[TransaksiController::class,'checkout']);
 
