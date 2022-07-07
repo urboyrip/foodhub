@@ -29,7 +29,12 @@
                 <td>
                     <a href="/dashboard/menu/{{ $menu->name }}" class="btn btn-success btn-sm">See</a>
                     <a href="" class="btn btn-warning btn-sm">Edit</a>
-                    <a href="" class="btn btn-danger btn-sm">Delete</a>
+
+                    <form action="/dashboard/menu/{{ $menu->id }}" method="POST" class="d-inline">
+                      @method('delete')
+                      @csrf
+                      <button class="btn btn-danger btn-sm" onclick="return confirm('Are u sure ?')">Delete</button>
+                    </form>
                 </td>
             </tr>
             @elseif(Auth::guard('vendors')->user()->id == $menu->vendors_id)
@@ -41,7 +46,11 @@
               <td>
                   <a href="/dashboard/menu/{{ $menu->name }}" class="btn btn-success btn-sm">See</a>
                   <a href="" class="btn btn-warning btn-sm">Edit</a>
-                  <a href="" class="btn btn-danger btn-sm">Delete</a>
+                  <form action="/dashboard/menu/{{ $menu->id }}" method="POST" class="d-inline">
+                      @method('delete')
+                      @csrf
+                      <button class="btn btn-danger btn-sm" onclick="return confirm('Are u sure ?')">Delete</button>
+                    </form>
               </td>
             </tr>
             @endif

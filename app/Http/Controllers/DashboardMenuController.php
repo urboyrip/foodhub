@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Menu;
 use App\Models\Vendors;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class DashboardMenuController extends Controller
 {
@@ -105,6 +106,11 @@ class DashboardMenuController extends Controller
      */
     public function destroy(Menu $menu)
     {
-        //
+        if($menu->image){
+            Storage::delete($menu->image);
+        }
+        Menu::destroy($menu->id);
+
+        return redirect('/dashboard/menu')->with('success','Vendor has been deleted');
     }
 }

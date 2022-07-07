@@ -26,8 +26,8 @@
         </li> --}}
       </ul>
       @if(Auth::guard('user')->check())
-        <li  class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <li  class="nav-item dropdown list-unstyled">
+          <a class="nav-link dropdown-toggle " href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Welcome,{{Auth::guard('user')->user()->name}}
           </a>
           @if(Auth::guard('user')->user()->admin==true)
@@ -55,7 +55,7 @@
           @endif
         </li>
       @elseif(Auth::guard('vendors')->check())
-      <li class="nav-item dropdown">
+      <li class="nav-item dropdown list-unstyled">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
           Welcome,{{Auth::guard('vendors')->user()->name}}
         </a>
