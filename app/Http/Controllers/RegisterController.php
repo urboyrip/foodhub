@@ -7,6 +7,8 @@ use App\Models\Vendors;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
+
 
 class RegisterController extends Controller
 {
@@ -49,7 +51,8 @@ class RegisterController extends Controller
             're-password' => 'required|required_with:password|same:password',
             'founder'=>'required'
         ]);
-        
+        $validatedData['slug']=Str::slug($validatedData['name']);
+        $validatedData['star']=3;
         // $validatedData['password'] = bcrypt($validatedData['password']);
         $validatedData['password'] = Hash::make($validatedData['password']);
 
