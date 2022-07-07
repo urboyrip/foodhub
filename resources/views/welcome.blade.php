@@ -11,7 +11,7 @@
           <button class="btn btn-outline-success" type="submit">Get Started</button>
         </form>
 
-        <h3 >Eatttt</h3>
+        
 
     </div> 
   </div>
