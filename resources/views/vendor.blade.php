@@ -28,11 +28,7 @@
                   @endif
                     <div class="card-body">
                       <h5 class="card-title">{{ $m->name }}</h5>
-<<<<<<< HEAD
                       <p class="card-text">{{ strip_tags($m->description) }}</p>
-=======
-                      {{ $m->description }}
->>>>>>> 7eb07fa83a5ccb7a313df156e113e189ec1f78b8
                       <p>Rp{{ $m->price }},-</p>
                       <a href="/menu/{{ $vendor->slug }}/{{ $m->id }}" class="btn btn-primary">Order</a>
                     </div>
