@@ -15,9 +15,13 @@
         @elseif(Auth::guard('user')->check() )
         <label class="form-label">Vendor</label>
         <select class="form-control" name="vendors_id" >
-          <option selected>Pilih Vendor</option>
+          
           @foreach ($vendors as $v)
+          @if (old('vendors_id',$menu->vendor->id)==$v->id)
+          <option selected value="{{ $v->id }}">{{ $v->name }}</option>
+          @else
           <option value="{{ $v->id }}">{{ $v->name }}</option>
+          @endif
           @endforeach
         </select>
         @endif
