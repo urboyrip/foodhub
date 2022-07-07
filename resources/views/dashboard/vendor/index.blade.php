@@ -18,7 +18,7 @@
           <th scope="col">Name</th>
           <th scope="col">Founder</th>
           <th scope="col">Star</th>
-          <th scope="col"><a href="/dashboard/vendors/create" class="btn btn-info btn-sm">Add</a></th>
+          {{-- <th scope="col"><a href="/dashboard/vendors/create" class="btn btn-info btn-sm">Add</a></th> --}}
         </tr>
       </thead>
       <tbody>
