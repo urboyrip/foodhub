@@ -21,7 +21,11 @@
             @if ($vendor->id==$m->vendors_id)
             <div class="col-md-4 mt-3">
                 <div class="card" style="width: 18rem;">
+                    @if($vendor->image)
+                    <img class="card-img-top" src="{{ asset('storage/'.$menu->picture) }}"  alt="Flyer">
+                    @else
                     <img class="card-img-top" src="/image/{{ $vendor->slug }}/{{ $m->picture }}" alt="{{ $m->name }}" >
+                  @endif
                     <div class="card-body">
                       <h5 class="card-title">{{ $m->name }}</h5>
                       <p class="card-text">{{ $m->description }}</p>

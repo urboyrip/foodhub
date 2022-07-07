@@ -13,8 +13,8 @@
               <option value="{{ $meja->id }}">{{ $meja->id }}</option>
               @endforeach
             </select>
-          <button type="submit" class="btn btn-outline-success mt-5"> Confirm</button>
-         
+          <button type="submit" class="btn btn-outline-success mt-5">Confirm</button>
+
         </div>
       </form>
         

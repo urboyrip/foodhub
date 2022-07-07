@@ -48,18 +48,12 @@ Route::get('/order',function(){
     return redirect('/menu');
     
 });
+
 Route::post('/order/create',[MenuController::class,'order']);
 
 Route::get('/rest',function(){
     return view('rest',[
         "title" => "rest"
-    ]);
-});
-
-Route::get('/pokokmari',function(){
-    return view('detailmenu',[
-        "title" => "detail",
-        "status"=> 'add'
     ]);
 });
 

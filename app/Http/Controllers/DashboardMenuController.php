@@ -28,7 +28,9 @@ class DashboardMenuController extends Controller
      */
     public function create()
     {
-        return view('dashboard.menu.create');
+        return view('dashboard.menu.create',[
+            'vendors' => Vendors::all()
+        ]);
     }
 
     /**
@@ -39,7 +41,26 @@ class DashboardMenuController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'name' => 'required',
+            'description' => 'required',
+            'price' => 'required',
+            'picture'=> 'image|file',
+            'description' => 'required',
+            'vendors_id' => 'required'
+        ]);
+            
+        if($request->file('image')){
+            $validatedData['image'] = $request->file('image')->store('menu');
+        }
+
+        // $validatedData['id'] = auth()->user()->id;
+        
+        $validateData['description'] = strip_tags($request->description);
+        
+        Menu::create($validatedData);
+
+        return redirect('/dashboard/menu')->with('success','Menu has been added');
     }
 
     /**

@@ -22,7 +22,7 @@ return new class extends Migration
             $table->text('description');
             $table->float('price');
             $table->string('picture');
-            $table->float('Rating');
+            $table->float('Rating')->default(4);
             $table->timestamps();
         });
     }

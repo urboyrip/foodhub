@@ -23,7 +23,7 @@
         </li> --}}
       </ul>
       @if(Auth::guard('user')->check())
-        <li class="nav-item dropdown">
+        <li  class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Welcome,{{Auth::guard('user')->user()->name}}
           </a>

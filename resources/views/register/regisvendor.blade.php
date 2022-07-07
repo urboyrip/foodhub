@@ -1,6 +1,6 @@
 @extends('layouts.main')
 @section('section')
-<div class="row justify-content-center">
+<div class="d-flex justify-content-center">
     <div class="col-md-4">
         <main class="form-registration">
             <h1 class="h3 mb-3 fw-normal text-center">Registration Vendors</h1>
