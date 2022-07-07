@@ -28,6 +28,9 @@ class MenuController extends Controller
             'total' => 0,
             'status' => '0'
         ]);
+        Meja::where('no_meja',$request->no_meja)->update([
+            'status' => '1'
+        ]);
         return redirect('/menu');
     }
     public function transaksiAdd(Request $request, $vendor,$menus){
