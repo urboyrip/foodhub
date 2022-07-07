@@ -20,7 +20,7 @@ class VendorSeeder extends Seeder
             [
             'username' => Str::random(10),
             'email' => Str::random(10).'@gmail.com',
-            'password' => Hash::make('password'),
+            'password' => bcrypt('12345'),
                 "name" => "Burger Bener",
                 "slug" => "burger-bener",
                 "founder" => "Pak Budi",
@@ -30,7 +30,7 @@ class VendorSeeder extends Seeder
             [
                 'username' => Str::random(10),
             'email' => Str::random(10).'@gmail.com',
-            'password' => Hash::make('password'),
+            'password' => bcrypt('12345'),
                 "name" => "Pak Bas",
                 "slug" => "pak-bas",
                 "founder" => "Pak Baskara",
@@ -40,7 +40,7 @@ class VendorSeeder extends Seeder
             [
                 'username' => Str::random(10),
             'email' => Str::random(10).'@gmail.com',
-            'password' => Hash::make('password'),
+            'password' => bcrypt('12345'),
                 "name" => "Soto Seger",
                 "slug" => "soto-seger",
                 "founder" => "Bu Ruminem",
@@ -50,7 +50,7 @@ class VendorSeeder extends Seeder
             [
                 'username' => Str::random(10),
             'email' => Str::random(10).'@gmail.com',
-            'password' => Hash::make('password'),
+            'password' => bcrypt('12345'),
                 "name" => "Rawon Setan",
                 "slug" => "rawon-setan",
                 "founder" => "Pak Steven",
