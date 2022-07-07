@@ -10,7 +10,7 @@
       <div class="mb-3">
         
         @if(Auth::guard('vendors')->check())
-        <input name="vendor" type="hidden" value="{{ Auth::guard('vendors')->user()->name }}" class="form-control"  >
+        <input name="vendors_id" type="hidden" value="{{ Auth::guard('vendors')->user()->id }}" class="form-control"  >
         
         @elseif(Auth::guard('user')->check() )
         <label class="form-label">Vendor</label>

@@ -72,7 +72,10 @@ class DashboardMenuController extends Controller
      */
     public function show(Menu $menu)
     {
-        return $menu;
+        return view('dashboard.menu.show',[
+            "menu" => $menu,
+            "vendor" => Vendors::find($menu->vendors_id)
+        ]);
     }
 
     /**
