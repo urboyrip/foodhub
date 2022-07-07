@@ -1,5 +1,6 @@
 <?php return array(
     'root' => array(
+<<<<<<< HEAD
         'name' => 'laravel/laravel',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
@@ -7,6 +8,15 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
+=======
+        'pretty_version' => 'dev-main',
+        'version' => 'dev-main',
+        'type' => 'project',
+        'install_path' => __DIR__ . '/../../',
+        'aliases' => array(),
+        'reference' => '1f98217f1bdae73632555e356e86d9c7c5ea60a3',
+        'name' => 'laravel/laravel',
+>>>>>>> fe97a1b525305b45e25cc839da78c038466d14d9
         'dev' => true,
     ),
     'versions' => array(
@@ -400,13 +410,29 @@
             'aliases' => array(),
             'dev_requirement' => false,
         ),
+        'laravel/helpers' => array(
+            'pretty_version' => 'v1.5.0',
+            'version' => '1.5.0.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../laravel/helpers',
+            'aliases' => array(),
+            'reference' => 'c28b0ccd799d58564c41a62395ac9511a1e72931',
+            'dev_requirement' => false,
+        ),
         'laravel/laravel' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
+<<<<<<< HEAD
             'reference' => '1f98217f1bdae73632555e356e86d9c7c5ea60a3',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
+=======
+            'type' => 'project',
+            'install_path' => __DIR__ . '/../../',
+            'aliases' => array(),
+            'reference' => '1f98217f1bdae73632555e356e86d9c7c5ea60a3',
+>>>>>>> fe97a1b525305b45e25cc839da78c038466d14d9
             'dev_requirement' => false,
         ),
         'laravel/sail' => array(
