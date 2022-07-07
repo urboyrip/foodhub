@@ -83,7 +83,10 @@ class DashboardMenuController extends Controller
      */
     public function edit(Menu $menu)
     {
-        return view('dashboard.menu.edit');
+        return view('dashboard.menu.edit',[
+            "vendors" => Vendors::all(),
+            "menu" => $menu
+        ]);
     }
 
     /**

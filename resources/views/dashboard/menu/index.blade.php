@@ -27,8 +27,8 @@
                 <td>{{ $menu->name }}</td>
                 <td>{{ $menu->price }}</td>
                 <td>
-                    <a href="/dashboard/menu/{{ $menu->name }}" class="btn btn-success btn-sm">See</a>
-                    <a href="" class="btn btn-warning btn-sm">Edit</a>
+                    <a href="/dashboard/menu/{{ $menu->id }}" class="btn btn-success btn-sm">See</a>
+                    <a href="/dashboard/menu/{{ $menu->id }}/edit" class="btn btn-warning btn-sm">Edit</a>
 
                     <form action="/dashboard/menu/{{ $menu->id }}" method="POST" class="d-inline">
                       @method('delete')
@@ -44,8 +44,8 @@
               <td>{{ $menu->name }}</td>
               <td>{{ $menu->price }}</td>
               <td>
-                  <a href="/dashboard/menu/{{ $menu->name }}" class="btn btn-success btn-sm">See</a>
-                  <a href="" class="btn btn-warning btn-sm">Edit</a>
+                  <a href="/dashboard/menu/{{ $menu->id }}" class="btn btn-success btn-sm">See</a>
+                  <a href="/dashboard/menu/{{ $menu->id }}/edit" class="btn btn-warning btn-sm">Edit</a>
                   <form action="/dashboard/menu/{{ $menu->id }}" method="POST" class="d-inline">
                       @method('delete')
                       @csrf
