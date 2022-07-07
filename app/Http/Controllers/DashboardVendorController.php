@@ -41,6 +41,7 @@ class DashboardVendorController extends Controller
     public function store(Request $request)
     {
         // return $request->file('image')->store('flyer');
+        
         $validatedData = $request->validate([
             'name' => 'required',
             'slug' => 'required|unique:vendors',
